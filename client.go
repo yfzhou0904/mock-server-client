@@ -70,3 +70,15 @@ func (c MockClient) VerifyAndClear(matcher RequestMatcher, times Times) error {
 	}
 	return nil
 }
+
+func (c MockClient) VerifyAndClearByHeader(headerName, headerValue string, matcher RequestMatcher, times Times) error {
+	err_verify := c.Verify(matcher.WithHeader(headerName, headerValue), times)
+	err_clear := c.Clear(RequestMatcher{}.WithHeader(headerName, headerValue))
+	if err_verify != nil {
+		return stacktrace.Propagate(err_verify, "Could not verify")
+	}
+	if err_clear != nil {
+		return stacktrace.Propagate(err_clear, "Could not clear")
+	}
+	return nil
+}
