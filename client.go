@@ -95,3 +95,17 @@ func (c MockClient) VerifyAndClearByHeader(headerName, headerValue string, match
 	}
 	return nil
 }
+
+// Set a new Expectation in mock server with request and response
+func (c MockClient) RegisterExpectation(expectation Expectation) error {
+	_, err := c.restyClient.NewRequest().
+		SetDoNotParseResponse(true).
+		SetBody(expectation).
+		Put("/mockserver/expectation")
+
+	if err != nil {
+		return stacktrace.Propagate(err, "error calling SetExpectation endpoint")
+	}
+
+	return nil
+}
