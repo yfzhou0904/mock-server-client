@@ -1,3 +1,7 @@
+![License](https://img.shields.io/github/license/BraspagDevelopers/mock-server-client.svg?style=flat-square)
+![Tag](https://img.shields.io/github/tag/BraspagDevelopers/mock-server-client.svg?style=flat-square)
+[![Go Report Card](https://goreportcard.com/badge/github.com/BraspagDevelopers/mock-server-client?style-flat-square)](https://goreportcard.com/report/github.com/BraspagDevelopers/mock-server-client)
+
 Mock Server Client - a Go package
 =============================
 
