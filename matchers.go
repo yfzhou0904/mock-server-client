@@ -16,9 +16,29 @@ func (m RequestMatcher) WithHeader(key, value string) RequestMatcher {
 }
 
 type BodyMatcher struct {
-	Type      string                 `json:"type,omitempty"`
-	JSON      map[string]interface{} `json:"json,omitempty"`
+	// complete spec can be found at https://www.mock-server.com/mock_server/creating_expectations.html
+
+	// JSON | PARAMETERS | STRING | REGEX | BINARY
+	Type string `json:"type,omitempty"`
+
+	// when type is "JSON"
 	MatchType string                 `json:"matchType,omitempty"`
+	JSON      map[string]interface{} `json:"json,omitempty"`
+
+	// when type is "PARAMETERS"
+	// aka form fields, body parameters, or "application/x-www-form-urlencoded"
+	Parameters map[string][]string `json:"parameters,omitempty"`
+
+	// when type is "STRING"
+	// strict string equality check on request body
+	String string `json:"string,omitempty"`
+
+	// when type is "REGEX"
+	// regex match on request body
+	Regex string `json:"regex,omitempty"`
+
+	// when type is "BINARY"
+	Base64Bytes string `json:"base64Bytes,omitempty"`
 }
 
 const (
