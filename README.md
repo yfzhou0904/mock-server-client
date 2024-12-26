@@ -1,6 +1,6 @@
-![License](https://img.shields.io/github/license/BraspagDevelopers/mock-server-client.svg?style=flat-square)
-![Tag](https://img.shields.io/github/tag/BraspagDevelopers/mock-server-client.svg?style=flat-square)
-[![Go Report Card](https://goreportcard.com/badge/github.com/BraspagDevelopers/mock-server-client?style-flat-square)](https://goreportcard.com/report/github.com/BraspagDevelopers/mock-server-client)
+![License](https://img.shields.io/github/license/yfzhou0904/mock-server-client.svg?style=flat-square)
+![Tag](https://img.shields.io/github/tag/yfzhou0904/mock-server-client.svg?style=flat-square)
+[![Go Report Card](https://goreportcard.com/badge/github.com/yfzhou0904/mock-server-client?style-flat-square)](https://goreportcard.com/report/github.com/yfzhou0904/mock-server-client)
 
 Mock Server Client - a Go package
 =============================
@@ -16,12 +16,12 @@ It is still work in progress.
 
 Using `go get`
 ```go
-go get -u github.com/BraspagDevelopers/mock-server-client
+go get -u github.com/yfzhou0904/mock-server-client
 ```
 
 Using `go.mod` file
 ```go
-require github.com/BraspagDevelopers/mock-server-client
+require github.com/yfzhou0904/mock-server-client
 ```
 
 
@@ -30,7 +30,7 @@ require github.com/BraspagDevelopers/mock-server-client
 Import the package
 ```go
 import (
-    "github.com/BraspagDevelopers/mock-server-client"
+    "github.com/yfzhou0904/mock-server-client"
 )
 ```
 
