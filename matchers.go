@@ -1,10 +1,11 @@
 package mockserver
 
 type RequestMatcher struct {
-	Method  string              `json:"method,omitempty"`
-	Path    string              `json:"path,omitempty"`
-	Body    BodyMatcher         `json:"body,omitempty"`
-	Headers map[string][]string `json:"headers,omitempty"`
+	Method                string              `json:"method,omitempty"`
+	Path                  string              `json:"path,omitempty"`
+	Body                  *BodyMatcher        `json:"body,omitempty"`
+	Headers               map[string][]string `json:"headers,omitempty"`
+	QueryStringParameters map[string][]string `json:"queryStringParameters,omitempty"`
 }
 
 func (m RequestMatcher) WithHeader(key, value string) RequestMatcher {
@@ -50,7 +51,7 @@ const (
 )
 
 func (m RequestMatcher) WithJSONFields(json map[string]interface{}) RequestMatcher {
-	m.Body = BodyMatcher{
+	m.Body = &BodyMatcher{
 		Type:      MatchBodyJSON,
 		JSON:      json,
 		MatchType: TolerantMatch,
